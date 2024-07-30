@@ -16,7 +16,7 @@
             border-radius: 5px;
         }
         h2 {
-            text-align: center; /* Center the main title */
+            text-align: center;
         }
         .chat-box {
             border: 1px solid #ccc;
@@ -25,18 +25,18 @@
             margin-top: 10px;
             max-height: 400px;
             overflow-y: auto;
-            text-align: center; /* Center content */
+            text-align: center;
         }
         .chat-message {
             margin: 5px 0;
         }
         .bot-message {
-            text-align: center; /* Center the question */
+            text-align: center;
             color: rgb(36, 0, 128);
         }
         .input-container {
             margin-top: 10px;
-            text-align: center; /* Center the input field and button */
+            text-align: center;
         }
         .input-container input {
             padding: 10px;
@@ -58,7 +58,7 @@
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             margin-top: 20px;
         }
         .video-container video {
@@ -69,7 +69,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            cursor: pointer; /* Indicate the video is clickable */
+            cursor: pointer;
         }
     </style>
 </head>
@@ -146,7 +146,7 @@
         const normalizedInput = userInput.split(/\s+/).filter(word => word);
         const matchedQuestion = findBestMatch(normalizedInput);
 
-        document.getElementById('user-input').value = ''; // Clear the text box
+        document.getElementById('user-input').value = '';
 
         if (matchedQuestion) {
             displayResponse(matchedQuestion);
@@ -178,8 +178,8 @@
         chatBox.style.display = 'block';
         clearChatBox();
         addBotMessage(selectedQuestion.question);
-        addBotVideo(selectedQuestion.video, true); // Autoplay the video
-        // addBotMessage(selectedQuestion.fullText); // Do not display the full text answer
+        addBotVideo(selectedQuestion.video, true);
+        // addBotMessage(selectedQuestion.fullText);
     }
 
     function clearChatBox() {
@@ -203,8 +203,8 @@
         const videoElement = document.createElement('video');
         videoElement.src = video;
         videoElement.autoplay = autoplay;
-        videoElement.playsinline = true; // Important for autoplay on mobile devices
-        videoElement.onclick = () => toggleVideoPlayback(videoElement); // Add click event to toggle playback
+        videoElement.playsinline = true;
+        videoElement.onclick = () => toggleVideoPlayback(videoElement);
         videoContainer.appendChild(videoElement);
         
         chatBox.appendChild(videoContainer);
